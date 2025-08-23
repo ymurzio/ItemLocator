@@ -19,11 +19,16 @@ public class Item {
     }
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long item_id;
 
     @Column(nullable = false)
     private String name;
+
+
+    @ManyToOne
+    @JoinColumn(name = "box_id")
+    private Box box;
 
     public Long getItem_id() {
         return item_id;
@@ -39,5 +44,13 @@ public class Item {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Box getBox() {
+        return box;
+    }
+
+    public void setBox(Box box) {
+        this.box = box;
     }
 }

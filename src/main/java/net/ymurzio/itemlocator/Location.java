@@ -19,11 +19,15 @@ public class Location {
     }
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long location_id;
 
     @Column(nullable = false)
     private String nearTo;
+
+    @ManyToOne
+    @JoinColumn(name = "room_id")
+    private Room room;
 
     public Long getLocation_id() {
         return location_id;
