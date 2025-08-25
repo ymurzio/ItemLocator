@@ -15,22 +15,22 @@ public class Room {
     public String toString() {
         return String.format(
                 "Room[id=%d, name='%s']",
-                room_id, roomName);
+                roomId, roomName);
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long room_id;
+    private Long roomId;
 
     @Column(nullable = false)
     private String roomName;
 
-    public Long getRoom_id() {
-        return room_id;
+    public Long getRoomId() {
+        return roomId;
     }
 
-    public void setRoom_id(Long room_id) {
-        this.room_id = room_id;
+    public void setRoomId(Long roomId) {
+        this.roomId = roomId;
     }
 
     public String getRoomName() {

@@ -15,12 +15,12 @@ public class Location {
     public String toString() {
         return String.format(
                 "Location[id=%d, near_to='%s']",
-                location_id, nearTo);
+                locationId, nearTo);
     }
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long location_id;
+    private Long locationId;
 
     @Column(nullable = false)
     private String nearTo;
@@ -29,12 +29,12 @@ public class Location {
     @JoinColumn(name = "room_id")
     private Room room;
 
-    public Long getLocation_id() {
-        return location_id;
+    public Long getLocationId() {
+        return locationId;
     }
 
-    public void setLocation_id(Long location_id) {
-        this.location_id = location_id;
+    public void setLocationId(Long locationId) {
+        this.locationId = locationId;
     }
 
     public String getNearTo() {
@@ -43,5 +43,13 @@ public class Location {
 
     public void setNearTo(String nearTo) {
         this.nearTo = nearTo;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
     }
 }

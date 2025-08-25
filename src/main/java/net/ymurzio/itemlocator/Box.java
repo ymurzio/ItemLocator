@@ -2,9 +2,6 @@ package net.ymurzio.itemlocator;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 public class Box {
 
@@ -18,12 +15,12 @@ public class Box {
     public String toString() {
         return String.format(
                 "Box[id=%d, name='%s']",
-                box_id, name);
+                boxId, name);
     }
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long box_id;
+    private Long boxId;
 
     @Column(nullable = false)
     private String name;
@@ -32,12 +29,12 @@ public class Box {
     @JoinColumn(name = "location_id")
     private Location location;
 
-    public Long getBox_id() {
-        return box_id;
+    public Long getBoxId() {
+        return boxId;
     }
 
-    public void setBox_id(Long box_id) {
-        this.box_id = box_id;
+    public void setBoxId(Long boxId) {
+        this.boxId = boxId;
     }
 
     public String getName() {
